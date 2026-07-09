@@ -1,0 +1,22 @@
+{
+    "include": [
+        "src",
+        "tests",
+        "workbench/app"
+    ],
+    "exclude": [
+        "tests/fixtures",
+        "tests/Browser/screenshots",
+        "tests/Browser/console",
+        "tests/Browser/source"
+    ],
+    "scripts": {
+        "lint": {
+            "phpstan": false
+        },
+        "fix": {
+            "phpstan": false
+        }
+    },
+    "processTimeout": 120
+}

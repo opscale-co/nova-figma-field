@@ -1,0 +1,131 @@
+{
+    "name": "Sample Design",
+    "lastModified": "2026-01-01T00:00:00Z",
+    "version": "1",
+    "role": "viewer",
+    "editorType": "figma",
+    "document": {
+        "id": "0:0",
+        "name": "Document",
+        "type": "DOCUMENT",
+        "scrollBehavior": "SCROLLS",
+        "children": [
+            {
+                "id": "0:1",
+                "name": "Page 1",
+                "type": "CANVAS",
+                "scrollBehavior": "SCROLLS",
+                "backgroundColor": { "r": 0.96, "g": 0.96, "b": 0.96, "a": 1 },
+                "children": [
+                    {
+                        "id": "1:2",
+                        "name": "Card",
+                        "type": "FRAME",
+                        "scrollBehavior": "SCROLLS",
+                        "blendMode": "PASS_THROUGH",
+                        "clipsContent": true,
+                        "absoluteBoundingBox": { "x": 0, "y": 0, "width": 480, "height": 320 },
+                        "absoluteRenderBounds": { "x": 0, "y": 0, "width": 480, "height": 320 },
+                        "constraints": { "vertical": "TOP", "horizontal": "LEFT" },
+                        "fills": [
+                            { "blendMode": "NORMAL", "type": "SOLID", "color": { "r": 1, "g": 1, "b": 1, "a": 1 } }
+                        ],
+                        "strokes": [],
+                        "strokeWeight": 1,
+                        "strokeAlign": "INSIDE",
+                        "cornerRadius": 16,
+                        "effects": [],
+                        "children": [
+                            {
+                                "id": "1:3",
+                                "name": "Accent",
+                                "type": "RECTANGLE",
+                                "scrollBehavior": "SCROLLS",
+                                "blendMode": "PASS_THROUGH",
+                                "absoluteBoundingBox": { "x": 24, "y": 24, "width": 432, "height": 120 },
+                                "absoluteRenderBounds": { "x": 24, "y": 24, "width": 432, "height": 120 },
+                                "constraints": { "vertical": "TOP", "horizontal": "LEFT" },
+                                "fills": [
+                                    { "blendMode": "NORMAL", "type": "SOLID", "color": { "r": 0.31, "g": 0.27, "b": 0.9, "a": 1 } }
+                                ],
+                                "strokes": [],
+                                "strokeWeight": 1,
+                                "strokeAlign": "INSIDE",
+                                "cornerRadius": 8,
+                                "effects": []
+                            },
+                            {
+                                "id": "1:4",
+                                "name": "Title",
+                                "type": "TEXT",
+                                "scrollBehavior": "SCROLLS",
+                                "blendMode": "PASS_THROUGH",
+                                "absoluteBoundingBox": { "x": 24, "y": 168, "width": 432, "height": 32 },
+                                "absoluteRenderBounds": { "x": 24, "y": 168, "width": 432, "height": 32 },
+                                "constraints": { "vertical": "TOP", "horizontal": "LEFT" },
+                                "fills": [
+                                    { "blendMode": "NORMAL", "type": "SOLID", "color": { "r": 0.1, "g": 0.1, "b": 0.12, "a": 1 } }
+                                ],
+                                "strokes": [],
+                                "strokeWeight": 1,
+                                "strokeAlign": "OUTSIDE",
+                                "effects": [],
+                                "characters": "Hello from Figma",
+                                "style": {
+                                    "fontFamily": "Inter",
+                                    "fontPostScriptName": "Inter-Bold",
+                                    "fontWeight": 700,
+                                    "fontSize": 24,
+                                    "textAlignHorizontal": "LEFT",
+                                    "textAlignVertical": "TOP",
+                                    "letterSpacing": 0,
+                                    "lineHeightPx": 32,
+                                    "lineHeightPercent": 100,
+                                    "lineHeightUnit": "INTRINSIC_%"
+                                },
+                                "characterStyleOverrides": [],
+                                "styleOverrideTable": {}
+                            },
+                            {
+                                "id": "1:5",
+                                "name": "Subtitle",
+                                "type": "TEXT",
+                                "scrollBehavior": "SCROLLS",
+                                "blendMode": "PASS_THROUGH",
+                                "absoluteBoundingBox": { "x": 24, "y": 208, "width": 432, "height": 24 },
+                                "absoluteRenderBounds": { "x": 24, "y": 208, "width": 432, "height": 24 },
+                                "constraints": { "vertical": "TOP", "horizontal": "LEFT" },
+                                "fills": [
+                                    { "blendMode": "NORMAL", "type": "SOLID", "color": { "r": 0.4, "g": 0.42, "b": 0.48, "a": 1 } }
+                                ],
+                                "strokes": [],
+                                "strokeWeight": 1,
+                                "strokeAlign": "OUTSIDE",
+                                "effects": [],
+                                "characters": "Rendered read-only inside Laravel Nova",
+                                "style": {
+                                    "fontFamily": "Inter",
+                                    "fontPostScriptName": "Inter-Regular",
+                                    "fontWeight": 400,
+                                    "fontSize": 16,
+                                    "textAlignHorizontal": "LEFT",
+                                    "textAlignVertical": "TOP",
+                                    "letterSpacing": 0,
+                                    "lineHeightPx": 24,
+                                    "lineHeightPercent": 100,
+                                    "lineHeightUnit": "INTRINSIC_%"
+                                },
+                                "characterStyleOverrides": [],
+                                "styleOverrideTable": {}
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "components": {},
+    "componentSets": {},
+    "schemaVersion": 0,
+    "styles": {}
+}

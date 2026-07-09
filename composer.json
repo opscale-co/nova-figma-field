@@ -1,0 +1,100 @@
+{
+  "name": "opscale-co/nova-figma-field",
+  "description": "Read-only Figma file renderer for Laravel Nova, powered by @grida/refig.",
+  "keywords": [
+    "laravel",
+    "nova",
+    "figma",
+    "refig",
+    "grida",
+    "field",
+    "visualizer"
+  ],
+  "license": "MIT",
+  "support": {
+    "issues": "https://github.com/opscale-co/nova-figma-field/issues",
+    "source": "https://github.com/opscale-co/nova-figma-field"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://nova.laravel.com"
+    }
+  ],
+  "require": {
+    "php": "^8.3",
+    "laravel/nova": "^5.0"
+  },
+  "require-dev": {
+    "larastan/larastan": "^3.9",
+    "laravel/nova-devtool": "^1.7",
+    "laravel/pint": "^1.15",
+    "mockery/mockery": "^1.6",
+    "opscale-co/strict-rules": "^1.1",
+    "orchestra/testbench-dusk": "^11.1",
+    "pestphp/pest": "^4.6",
+    "pestphp/pest-plugin-laravel": "^4.1",
+    "rector/rector": "^2.4",
+    "rector/rector-laravel": "^2.3",
+    "tightenco/duster": "^3.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Opscale\\Fields\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Database\\Seeders\\": "database/seeders/",
+      "Opscale\\Fields\\Tests\\": "tests/",
+      "Workbench\\App\\": "workbench/app/",
+      "Workbench\\Database\\Factories\\": "workbench/database/factories/",
+      "Workbench\\Database\\Seeders\\": "workbench/database/seeders/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Opscale\\Fields\\FieldServiceProvider"
+      ]
+    }
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "composer/package-versions-deprecated": true,
+      "pestphp/pest-plugin": true
+    }
+  },
+  "scripts": {
+    "build": [
+      "npm run production",
+      "@php vendor/bin/testbench workbench:build --ansi",
+      "@php vendor/bin/testbench storage:link --force --ansi"
+    ],
+    "serve": [
+      "Composer\\Config::disableProcessTimeout",
+      "@build",
+      "@php vendor/bin/testbench serve --ansi"
+    ],
+    "sync-dusk": [
+      "@build",
+      "@php scripts/sync-dusk-skeleton.php"
+    ],
+    "test": "@php vendor/bin/pest --testsuite=Unit,Feature",
+    "test:web": [
+      "@sync-dusk",
+      "@php vendor/bin/pest -c phpunit.dusk.xml"
+    ]
+  },
+  "scripts-descriptions": {
+    "build": "Compile JS (mix) and rebuild the workbench: migrations, seeders, Nova assets.",
+    "serve": "Build the workbench and start the Nova dev server — browse http://127.0.0.1:8000/nova (admin@laravel.com / password).",
+    "sync-dusk": "Build, then copy Nova assets and the SQLite DB into the Testbench Dusk skeleton so browser tests can boot.",
+    "test": "Run Unit + Feature tests.",
+    "test:web": "Sync the Dusk skeleton and run Dusk browser tests against Nova UI."
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "version": "1.0.0"
+}

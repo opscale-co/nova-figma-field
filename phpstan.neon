@@ -1,0 +1,60 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+    - vendor/opscale-co/strict-rules/rules.clean.neon
+    - vendor/opscale-co/strict-rules/rules.ddd.neon
+    - vendor/opscale-co/strict-rules/rules.smells.neon
+    - vendor/opscale-co/strict-rules/rules.solid.neon
+
+parameters:
+    level: 8
+    phpVersion: 80300
+    reportUnmatchedIgnoredErrors: false
+    paths:
+        - src
+        - tests
+    excludePaths:
+        - tests/fixtures/*
+    ignoreErrors:
+        # Laravel service providers follow framework patterns that conflict with strict SOLID
+        -
+            message: '#.*#'
+            path: '*ServiceProvider.php'
+
+        # The field fully replaces meta() for its viewer defaults; parent:: is called but the
+        # combined array merge keeps the analyzer confused about the overlap.
+        -
+            identifier: smells.enforceLogicHandling.import
+            path: src/Figma.php
+        -
+            identifier: missingType.iterableValue
+            path: src/Figma.php
+        -
+            identifier: solid.lsp.parentCall
+            path: src/Figma.php
+
+        # Tests are helpers-heavy and instantiate SUT directly
+        -
+            identifier: solid.dip.disallowInstantiation
+            path: tests/*
+        -
+            identifier: smells.helpersRestriction.helper
+            path: tests/*
+        -
+            identifier: property.notFound
+            path: tests/*
+        # Pest binds $this to the TestCase at runtime; PHPStan sees TestCall
+        -
+            identifier: method.notFound
+            path: tests/*
+        -
+            identifier: argument.templateType
+            path: tests/*
+        -
+            identifier: solid.ocp.conditionalOverride
+            path: tests/*
+        -
+            identifier: solid.lsp.parentCall
+            path: tests/*
+        -
+            identifier: missingType.iterableValue
+            path: tests/*

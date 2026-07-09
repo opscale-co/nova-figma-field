@@ -1,0 +1,35 @@
+providers:
+    - Inertia\ServiceProvider
+    - Laravel\Fortify\FortifyServiceProvider
+    - Laravel\Nova\NovaCoreServiceProvider
+    - Laravel\Nova\NovaServiceProvider
+    - Laravel\Dusk\DuskServiceProvider
+    - Workbench\App\Providers\WorkbenchServiceProvider
+    - Workbench\App\Providers\NovaServiceProvider
+    - Opscale\Fields\FieldServiceProvider
+
+migrations:
+    - workbench/database/migrations
+
+seeders:
+    - Database\Seeders\DatabaseSeeder
+
+workbench:
+    start: '/nova'
+    user: 'admin@laravel.com'
+    guard: 'web'
+    install: true
+    welcome: false
+    discovers:
+        config: false
+        web: false
+        api: false
+        commands: false
+        components: false
+        views: false
+    build:
+        - asset-publish
+        - create-sqlite-db
+        - db-wipe
+        - migrate
+        - db-seed
